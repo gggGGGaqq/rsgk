@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="manifest" href="/manifest.json">
+	<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/service-worker.js')
+			.then((registration) => {
+				console.log('Service Worker зарегистрирован с областью:', registration.scope);
+			}).catch((error) => {
+				console.log('Ошибка регистрации Service Worker:', error);
+			});
+		}
+	</script>
+
+</head>
+<body>
+    <div id="app">
+        <div class="header">
+            <h1>Расписание занятий</h1>
+            <div class="select-container">
+                <div class="select-group">
+                    <label for="group-select">Группа:</label>
+                    <select id="group-select">
+                        <option value="шт">ШТ</option>
+                        <option value="ет">ЕТ</option>
+                        <option value="ббм">ББМ</option>
+                        <option value="дтс">ДТС</option>
+                        <option value="фкс">ФКС</option>
+                        <option value="пмно">ПМНО</option>
+                        <option value="пп">ПП</option>
+                        <option value="тот">ТОТ</option>
+                    </select>
+                </div>
+
+                <div class="select-group">
+                    <label for="course-select">Курс:</label>
+                    <select id="course-select">
+                        <option value="1">1 курс</option>
+                        <option value="2">2 курс</option>
+                        <option value="3">3 курс</option>
+                        <option value="4">4 курс</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="schedule">
+            <h2>Расписание на понедельник</h2>
+            <div id="schedule-content">
+                <!-- Расписание будет добавляться здесь -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
