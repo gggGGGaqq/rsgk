@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кабинет учителя</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div class="header">
+            <h1>Редактирование расписания</h1>
+        </div>
+
+        <div class="edit-container">
+            <div class="select-container">
+                <div class="select-group">
+                    <label for="edit-group-select">Группа:</label>
+                    <select id="edit-group-select">
+                        <option value="шт">ШТ</option>
+                        <option value="ет">ЕТ</option>
+                        <option value="ббм">ББМ</option>
+                        <option value="дтс">ДТС</option>
+                        <option value="фкс">ФКС</option>
+                        <option value="пмно">ПМНО</option>
+                        <option value="пп">ПП</option>
+                        <option value="тот">ТОТ</option>
+                    </select>
+                </div>
+
+                <div class="select-group">
+                    <label for="edit-course-select">Курс:</label>
+                    <select id="edit-course-select">
+                        <option value="1">1 курс</option>
+                        <option value="2">2 курс</option>
+                        <option value="3">3 курс</option>
+                        <option value="4">4 курс</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="schedule-edit">
+                <h2>Редактировать расписание</h2>
+                <!-- Форма для изменения расписания -->
+                <form id="edit-schedule-form">
+                    <label for="edit-time">Время:</label>
+                    <input type="text" id="edit-time" required>
+
+                    <label for="edit-subject">Предмет:</label>
+                    <input type="text" id="edit-subject" required>
+
+                    <label for="edit-teacher">Преподаватель:</label>
+                    <input type="text" id="edit-teacher" required>
+
+                    <label for="edit-room">Кабинет:</label>
+                    <input type="text" id="edit-room" required>
+
+                    <button type="submit">Сохранить изменения</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Пример обработки данных для редактирования расписания
+        document.getElementById("edit-schedule-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const time = document.getElementById("edit-time").value;
+            const subject = document.getElementById("edit-subject").value;
+            const teacher = document.getElementById("edit-teacher").value;
+            const room = document.getElementById("edit-room").value;
+
+            alert(`Расписание обновлено: ${subject} в ${time}, преподаватель: ${teacher}, кабинет: ${room}`);
+        });
+    </script>
+</body>
+</html>
